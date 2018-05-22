@@ -1,0 +1,111 @@
+<html>
+
+	<head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</head>
+
+	<body>
+		<div class="container">
+			<img src="sialight_logo (1).png" style=width:300px;"font-size:48px; padding-left: 10%; padding-top: 3%;"></i>
+			<div class="span6 float-right" style="padding-top: 9%;" >
+				<div class="dropdown">
+				  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   Conta
+				  </button>
+				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				    <a class="dropdown-item" href="#">Configurações</a>
+				    <a class="dropdown-item" href="#">Sair</a>
+				  </div>
+				</div>
+			</div>
+			<nav class="navbar navbar-dark navbar-expand-lg" style="background-color: #881616;">
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			    <div class="navbar-nav">
+			      <a class="nav-item nav-link active" href="tela_aluno.html"> Aluno<span class="sr-only">(current)</span></a>
+			      <a class="nav-item nav-link" href="calendario.html">Atividades do Mês</a>
+			      <a class="nav-item nav-link" href="#">Material</a>
+			    </div>
+			  </div>
+			</nav>
+
+			<div style = "padding-top: 80px;">
+				<div class="card" style="width: 100%; margin-top: -70px;">
+				  <div class="card-body">
+					<p class="card-text">Boa Noite Aluno! São <label id="horas"></label> do dia <label id="data"></p>
+					<script>
+  
+						var today = new Date();
+						var dd = today.getDate();
+						var mm = today.getMonth()+1; //January is 0!
+						var yyyy = today.getFullYear();
+						var horas = today.getHours();
+						var minutos = today.getMinutes();
+						
+						if(dd<10) {
+							dd = '0'+dd
+						} 
+
+						if(mm<10) {
+							mm = '0'+mm
+						} 
+
+						today = dd + '/' + mm + '/' + yyyy;
+						document.getElementById('data').innerHTML = today;
+						document.getElementById("horas").innerHTML = horas + ":" + minutos ;
+						</script>
+				  </div>
+				</div>
+			</div>
+			<div width="100%">
+				<div style = "width:35%;float:left">
+					<div class="card">
+					  <div class="card-header">
+						<h4>Frequência</h4>
+					  </div>
+					  <div class="card-body">
+						<h5 class="card-title"><strong>TOTAL DE FALTAS</strong></h5>
+						<div class="alert alert-danger">
+							<h4>10%</h4>
+						</div>
+						<p class="card-text">Limite de faltas permitidas</p>
+						<div class="alert alert-success" role="alert">
+							<h4>25%</h4>
+						</div>
+					  </div>
+					</div>
+				</div>
+				<div class="container span6" style = "width:60%;float:right">
+					<table class="table table-fixed table-bordered" >
+						<thead class="thead-dark" >
+							<tr>
+							  <th scope="col" width="25%" >AV1</th>
+							  <th scope="col" width="25%">AV2</th>
+							  <th scope="col" width="25%">AV3</th>
+							  <th scope="col" width="25%">Trabalhos</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>6</td>
+								<td>9</td>
+								<td>8.5</td>
+								<td>2.5</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+
+</html>
